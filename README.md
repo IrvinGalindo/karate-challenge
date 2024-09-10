@@ -1,4 +1,3 @@
-
 ![created by](https://i.pinimg.com/originals/98/ce/79/98ce79782e3f701a7c9243bb961adadd.png)
 
 # 🚀 karate-training 🚀
@@ -121,10 +120,85 @@ Now, your Karate framework is ready and you are able to start working on the cha
 
 ### To-Do List
 
-[Check list](assets/check-list.md)
+1. Ignore feature called [conduit.feature](src/test/java/org/conduit/features/conduit.feature). Do not delete it, just
+   ignore it using **tags**.
+2. Create attributes in config variable on [karate-config.js](src/test/karate-config.js).
+    1. **baseUrl:**  it will contain the baseUrl.
+    2. **token:** it will store a token given by a request.
+    3. **email:** it will store an email given by a feature.
+    4. **username:** This variable will contain two different values depending on the environment you use to run
+       your tests. if karate.env=dev, then **[branchName]**-dev. if karate.env=prod, then **[branchName]-prod**.
+    5. **slugs:** array which will store slug ids given by a request.
+3. Create new feature file called **register-user** under package [features](src/test/java/org/conduit/features) and
+   test the
+   following
+   scenarios. [Register user](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/request/37903089-70cff9d5-77a2-4470-b630-678448de8359?tab=body).
+    1. Create a method called **getRandomNumber**
+       on [DataGenerator](src/test/java/org/conduit/helpers/DataGenerator.java) class which will return a random number.
+    2. Append the generated number to the global **username** variable at the end.
+    3. Using the username variable, create a new email and store it in the global variable called **email**
+    4. **Scenario 1:** Register a valid user using the global variables **email**, and **username**
+       created to generate new emails and usernames.
+        1. Validate the status code.
+        2. Validate request returns user details.
+        3. Store token in the variable called **token**.
+    5. **Scenario 2:** Register an invalid user, missing username in request
+       body. [Unexpected error request](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/example/37903089-3b355112-5256-44f9-b8bd-8120c3e78c25)
+        1. Validate the status code.
+        2. Validate request returns an error which mentions attribute is missed.
+    6. **Scenario 3:** Register an existing
+       user. [Existing user request](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/example/37903089-15447193-f8af-4ad0-9a2e-52946ecce339)
+        1. Validate the status code.
+        2. Validate request returns an error which mentions user already exists
+4. Create new feature file called **tags** under package [features](src/test/java/org/conduit/features) and test the
+   following
+   request [Tags](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/request/37903089-0c32b370-46e7-4286-8aaa-4e930ed8e25f).
+    1. **Scenario 1:** Get all tags.
+        1. Validate the status code.
+        2. Validate request returns an array which contains the tags **Coding**, and **Enroll**.
+        3. Store the tags **Coding**, and **Enroll** in a new variable called **tags**.
+5. Create new feature file called **create-articles** under package [features](src/test/java/org/conduit/features) and
+   test the
+   following
+   request [Create Articles](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/request/37903089-bdcfed20-0a62-45e6-8433-e1883331e192).
+    1. Create two article Json objects on [articles](src/test/java/org/conduit/data/articles.json) json file. **Example
+       **
+        ```
+           {
+   
+             "article": {
+              "title": "My test",
+              "description": "this is a karate test",
+              "body": "My first karate test",
+              "tagList": []
+             }
+           }
+        ```
+    2. **Scenario 1:** Create a new articles using json file
+       called [articles](src/test/java/org/conduit/data/articles.json), stored tags and using the token as header.
+        1. Validate the status code.
+        2. Validate request returns article information you sent, ensure request contains an array which contains the
+           tags **Coding**, and **Enroll**.
+        3. Store the **slug** in the variable called **slugs**.
+    3. **Scenario 2:** Create a new articles missing title attribute in request
+       body [Unexpected error request](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/example/37903089-7095c4c1-9e59-4ba1-9b31-a61734b6cb88)
+        1. Validate the status code.
+        2. Validate request returns an error which mentions attribute is missed.
+6. Create new feature file called **delete-articles** under package [features](src/test/java/org/conduit/features) and
+   test the
+   following
+   request [Delete Articles](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/request/37903089-44ba4cdf-3633-4731-b85a-7ebb7a9bfd5b).
+    1. **Scenario 1:** Delete the first article using the first slug in **slugs** variable.
+        1. Validate the status code.
+        2. Remove deleted slug from **slugs** variable
+7. Run program using **dev** environment, validate test pass, and save the report that is
+   in [cucumber](target/cucumber-html-reports/overview-features.html)
+
+   ``` mvn clean test -Dkarate.env=dev -Dtest=ConduitRunnerTest```
+8. Run program using **prod** environment, validate test pass, and save the report that is
+   in [cucumber](target/cucumber-html-reports/overview-features.html)
+
+   ``` mvn clean test -Dkarate.env=prod -Dtest=ConduitRunnerTest```
 
 ## 🎊🎊 That's it, you finished karate's training. Congratulations!!! 🎊🎊
 
-
-
-![made-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)
