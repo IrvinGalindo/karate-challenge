@@ -1,4 +1,4 @@
-![created by](https://i.pinimg.com/originals/98/ce/79/98ce79782e3f701a7c9243bb961adadd.png)
+![created by](https://i.pinimg.com/originals/13/b2/32/13b232d3c923e9b2934f51a967dd9e2d.png)
 
 # 🚀 Karate Challenge 🚀
 
@@ -197,6 +197,7 @@ Now, your Karate Framework is ready, and you can start working on the challenges
    in [cucumber](target/cucumber-html-reports/overview-features.html)
 
    ``` mvn clean test -Dkarate.env=prod -Dtest=ConduitRunnerTest```
+9. Create a PR named as your branch name.
 
 ## 🎊🎊 That's it, you finished karate's Challenge. Congratulations!!! 🎊🎊
 
