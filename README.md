@@ -4,9 +4,8 @@
 
 ---
 
-In this course, you will be able to challenge your karate's knowledge. You will be able to set up karate framework, use
-different variables on
-environments, and practice cucumber/Jenkins testing a real word API
+In this course you will be able to challenge your Karate knowledge. You will be able to configure the karate framework,
+use different variables in the environments and practice cucumber/Jenkins by trying a real API.
 
 <div>
   <a href="https://github.com/IrvinGalindo/karate-challenge/stargazers">
@@ -77,7 +76,7 @@ Do not forget to clone the project to your local 😉
 
 4. Run the program to validate setUp is OKAY ✅. Tests must pass.
    ![first-run.png](assets/first-run.png)
-   **NOTE:** you can also use mvn command on IntelliJ terminal
+   **NOTE:** you can also use mvn command in the IntelliJ terminal
    ``` mvn clean test -Dkarate.env=dev -Dtest=ConduitRunnerTest```
 
 ## 📝 Challenge
@@ -85,16 +84,15 @@ Do not forget to clone the project to your local 😉
 ---
 
 Before getting on with it, It is important to mention that the API which will be used to practice Karate is provided
-by [Bondar academy](https://www.bondaracademy.com/), and it will only be used for educational purposes. You can see the
+by [Bondar academy](https://www.bondaracademy.com/), and will only be used for educational purposes. You can see the
 collection here.
 [Postman Collection](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/collection/37903089-211e52b1-b0b0-47a4-a704-bb9065cf2228)
 
 >
 >Note
 >
-> If you want to play with the API, and run the calls manually, you can select **Conduit** environment in Postman, and
-> use the following user which was already created.
->
+> If you want to play with the API and run the calls manually, you can select the Conduit environment in Postman and use
+> the following user that has already been created.
 >
 ><table>
 >  <tr> 
@@ -116,47 +114,47 @@ collection here.
 > </table>
 
 
-Now, your Karate framework is ready and you are able to start working on the challenges 🎉🎉🎉.
+Now, your Karate Framework is ready, and you can start working on the challenges 🎉🎉🎉.
 
 ### To-Do List
 
+<i>Below you will find a list of the challenges you must solve to complete this course, go for it. 💪 </i>
+
 1. Ignore feature called [conduit.feature](src/test/java/org/conduit/features/conduit.feature). Do not delete it, just
    ignore it using **tags**.
-2. Create attributes in config variable on [karate-config.js](src/test/karate-config.js).
+2. Create attributes in config variable in [karate-config.js](src/test/karate-config.js).
     1. **baseUrl:**  it will contain the baseUrl.
     2. **token:** it will store a token given by a request.
-    3. **email:** it will store an email given by a feature.
+    3. **email:** it will store an email provided by a feature test.
     4. **username:** This variable will contain two different values depending on the environment you use to run
        your tests. if karate.env=dev, then **[branchName]**-dev. if karate.env=prod, then **[branchName]-prod**.
-    5. **slugs:** array which will store slug ids given by a request.
+    5. **slugs:** array which will store slug ids provided by a request.
 3. Create new feature file called **register-user** under package [features](src/test/java/org/conduit/features) and
-   test the
-   following
+   test the following
    scenarios. [Register user](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/request/37903089-70cff9d5-77a2-4470-b630-678448de8359?tab=body).
     1. Create a method called **getRandomNumber**
        on [DataGenerator](src/test/java/org/conduit/helpers/DataGenerator.java) class which will return a random number.
-    2. Append the generated number to the global **username** variable at the end.
-    3. Using the username variable, create a new email and store it in the global variable called **email**
-    4. **Scenario 1:** Register a valid user using the global variables **email**, and **username**
-       created to generate new emails and usernames.
+    2. Add the generated number to the global **username** variable at the end.
+    3. Using the username variable, create a new email **([newUsername@email.com])** and save it in the global variable called **email**
+    4. **Scenario 1:** Register a valid user using the global variables **email**, and **username**.
         1. Validate the status code.
         2. Validate request returns user details.
         3. Store token in the variable called **token**.
     5. **Scenario 2:** Register an invalid user, missing username in request
        body. [Unexpected error request](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/example/37903089-3b355112-5256-44f9-b8bd-8120c3e78c25)
         1. Validate the status code.
-        2. Validate request returns an error which mentions attribute is missed.
+        2. Validate request returns an error mentioning attribute is missed.
     6. **Scenario 3:** Register an existing
        user. [Existing user request](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/example/37903089-15447193-f8af-4ad0-9a2e-52946ecce339)
         1. Validate the status code.
-        2. Validate request returns an error which mentions user already exists
+        2. Validate request returns an error mentioning user already exists
 4. Create new feature file called **tags** under package [features](src/test/java/org/conduit/features) and test the
    following
    request [Tags](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/request/37903089-0c32b370-46e7-4286-8aaa-4e930ed8e25f).
     1. **Scenario 1:** Get all tags.
         1. Validate the status code.
         2. Validate request returns an array which contains the tags **Coding**, and **Enroll**.
-        3. Store the tags **Coding**, and **Enroll** in a new variable called **tags**.
+        3. Save the tags **Coding**, and **Enroll** in the global variable called **tags**.
 5. Create new feature file called **create-articles** under package [features](src/test/java/org/conduit/features) and
    test the
    following
@@ -170,11 +168,11 @@ Now, your Karate framework is ready and you are able to start working on the cha
               "title": "My test",
               "description": "this is a karate test",
               "body": "My first karate test",
-              "tagList": []
+              "tagList": [:tags]
              }
            }
         ```
-    2. **Scenario 1:** Create a new articles using json file
+    2. **Scenario 1:** Create new articles using json file
        called [articles](src/test/java/org/conduit/data/articles.json), stored tags and using the token as header.
         1. Validate the status code.
         2. Validate request returns article information you sent, ensure request contains an array which contains the
