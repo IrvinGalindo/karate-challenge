@@ -1,6 +1,6 @@
 ![created by](https://i.pinimg.com/originals/98/ce/79/98ce79782e3f701a7c9243bb961adadd.png)
 
-# 🚀 karate-training 🚀
+# 🚀 Karate Challenge 🚀
 
 ---
 
@@ -9,7 +9,7 @@ different variables on
 environments, and practice cucumber/Jenkins testing a real word API
 
 <div>
-  <a href="https://github.com/IrvinGalindo/karate-training/stargazers">
+  <a href="https://github.com/IrvinGalindo/karate-challenge/stargazers">
     <img alt="github-starts" src="https://img.shields.io/github/stars/karatelabs/karate?style=social"/>
   </a>
    <a href="https://github.com/IrvinGalindo">
@@ -200,5 +200,5 @@ Now, your Karate framework is ready and you are able to start working on the cha
 
    ``` mvn clean test -Dkarate.env=prod -Dtest=ConduitRunnerTest```
 
-## 🎊🎊 That's it, you finished karate's training. Congratulations!!! 🎊🎊
+## 🎊🎊 That's it, you finished karate's Challenge. Congratulations!!! 🎊🎊
 
