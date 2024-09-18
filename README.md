@@ -79,7 +79,7 @@ Do not forget to clone the project to your local 😉
    **NOTE:** you can also use mvn command in the IntelliJ terminal
    ``` mvn clean test -Dkarate.env=dev -Dtest=ConduitRunnerTest```
 
-## 📝 Challenge
+##  🎮 Challenge
 
 ---
 
