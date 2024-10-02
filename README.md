@@ -84,9 +84,10 @@ Do not forget to clone the project to your local 😉
 ---
 
 Before getting on with it, It is important to mention that the API which will be used to practice Karate is provided
-by [Bondar academy](https://www.bondaracademy.com/), and will only be used for educational purposes. You can see the
-collection here.
-[Postman Collection](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/collection/37903089-211e52b1-b0b0-47a4-a704-bb9065cf2228)
+by [Bondar academy](https://www.bondaracademy.com/), and will only be used for educational purposes.
+
+You can see the collection here.
+[Postman Collection](https://www.postman.com/iromgalindo/conduit-api/environment/37903089-1f0e0317-22a7-42ec-95c7-a11ff8bbb916/conduit?action=share&creator=37903089)
 
 >
 >Note
