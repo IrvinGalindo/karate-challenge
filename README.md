@@ -79,7 +79,7 @@ Do not forget to clone the project to your local 😉
    **NOTE:** you can also use mvn command in the IntelliJ terminal
    ``` mvn clean test -Dkarate.env=dev -Dtest=ConduitRunnerTest```
 
-##  🎮 Challenge
+## 🎮 Challenge
 
 ---
 
@@ -123,7 +123,7 @@ Now, your Karate Framework is ready, and you can start working on the challenges
 
 1. Ignore feature called [conduit.feature](src/test/java/org/conduit/features/conduit.feature). Do not delete it, just
    ignore it using **tags**.
-2. Create attributes in config variable in [karate-config.js](src/test/karate-config.js).
+2. Create attributes in config variable in [karate-config.js](src/test/java/karate-config.js).
     1. **baseUrl:**  it will contain the baseUrl.
     2. **token:** it will store a token given by a request.
     3. **email:** it will store an email provided by a feature test.
@@ -136,7 +136,8 @@ Now, your Karate Framework is ready, and you can start working on the challenges
     1. Create a method called **getRandomNumber**
        on [DataGenerator](src/test/java/org/conduit/helpers/DataGenerator.java) class which will return a random number.
     2. Add the generated number to the global **username** variable at the end.
-    3. Using the username variable, create a new email **([newUsername@email.com])** and save it in the global variable called **email**
+    3. Using the username variable, create a new email **([newUsername@email.com])** and save it in the global variable
+       called **email**
     4. **Scenario 1:** Register a valid user using the global variables **email**, and **username**.
         1. Validate the status code.
         2. Validate request returns user details.
@@ -160,20 +161,28 @@ Now, your Karate Framework is ready, and you can start working on the challenges
    test the
    following
    request [Create Articles](https://web.postman.co/workspace/My-Workspace~f79fdbc6-f622-45c7-8c45-63f99c4038e7/request/37903089-bdcfed20-0a62-45e6-8433-e1883331e192).
-    1. Create two article Json objects on [articles](src/test/java/org/conduit/data/articles.json) json file. **Example
-       **
+    1. Create two articles in a Json file which will be used as data input
+       on [articles](src/test/java/org/conduit/data/articles.json) json file.
+
+       **Example**
+
         ```
-           {
-   
-             "article": {
-              "title": "My test",
-              "description": "this is a karate test",
-              "body": "My first karate test",
-              "tagList": [:tags]
-             }
-           }
+           [
+            {
+                 "title": "My test",
+                 "description": "this is a karate test",
+                 "body": "My first karate test",
+                 "tagList": [:tags]
+            },
+            {
+                  "title": "My test 2",
+                   "description": "this is a karate test 2",
+                   "body": "My second karate test",
+                   "tagList": [:tags]
+            }
+          ]
         ```
-    2. **Scenario 1:** Create new articles using json file
+    2. **Scenario 1:** Using a Scenario Outline, create new articles using created json file.
        called [articles](src/test/java/org/conduit/data/articles.json), stored tags and using the token as header.
         1. Validate the status code.
         2. Validate request returns article information you sent, ensure request contains an array which contains the

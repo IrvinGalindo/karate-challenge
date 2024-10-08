@@ -10,7 +10,7 @@
 - [ ] Ignore feature called [conduit.feature](../src/test/java/org/conduit/features/conduit.feature). Do not delete it,
  just
  ignore it using **tags**.
-- [ ] Create attributes in config variable on [karate-config.js](../src/test/karate-config.js).
+- [ ] Create attributes in config variable on [karate-config.js](../src/test/java/karate-config.js).
     - [ ] **baseUrl:**  it will contain the baseUrl.
     - [ ] **token:** it will store a token given by a request.
     - [ ] **email:** it will store an email given by a feature.
@@ -55,13 +55,11 @@
      *Example**
   ```
      {
- 
-       "article": {
+
         "title": "My test",
         "description": "this is a karate test",
         "body": "My first karate test",
-        "tagList": []
-       }
+        "tagList": [:tags]
      }
   ```
     - [ ] **Scenario 1:** Create a new articles using json file
