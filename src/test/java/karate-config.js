@@ -5,9 +5,8 @@ function fn() {
     env = 'dev';
   }
   var config = {
-    apiUrl: "https://conduit-api.bondaracademy.com/api",
+    env: env,
   }
-  console.log("environment"+env)
   if (env == 'dev') {
     // customize
     // e.g. config.foo = 'bar';
